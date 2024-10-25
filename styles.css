@@ -340,22 +340,7 @@ footer nav ul li a:hover::after {
   transform: translateY(0);
 }
 
-nav {
-  padding: 1rem 2rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: white;
-  z-index: 1000;
-}
-
-.nav-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+/* Removed duplicate nav and nav-content styles */
 
 .animated-logo {
   display: flex;
