@@ -89,4 +89,14 @@ const handleLogoAnimation = () => {
 };
 
 // Initialize the animation when the page loads
-document.addEventListener("DOMContentLoaded", handleLogoAnimation);
+document.addEventListener("DOMContentLoaded", () => {
+  handleLogoAnimation();
+
+  // Mobile navigation menu toggle
+  const menuIcon = document.querySelector(".menu-icon");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuIcon.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+});
