@@ -27,7 +27,12 @@
     <header>
       <nav>
         <div class="nav-content">
-          <a href="index.html" class="animated-logo" id="logo">
+          <a
+            href="index.html"
+            class="animated-logo"
+            id="logo"
+            aria-label="Home"
+          >
             <svg width="100" height="50" xmlns="http://www.w3.org/2000/svg">
               <text
                 x="0"
@@ -49,11 +54,11 @@
               </text>
             </svg>
           </a>
-          <div class="menu-icon">&#9776;</div>
+          <div class="menu-icon" aria-label="Menu">&#9776;</div>
           <div class="nav-links">
-            <a href="index.html#work">Work</a>
-            <a href="about.html">About</a>
-            <a href="#contact">Contact</a>
+            <a href="index.html#work" aria-label="Work">Work</a>
+            <a href="about.html" aria-label="About">About</a>
+            <a href="#contact" aria-label="Contact">Contact</a>
           </div>
         </div>
       </nav>
@@ -109,7 +114,11 @@
 
         <section class="contact" id="contact">
           <h2>Contact Me</h2>
-          <form class="contact-form">
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/xeoqljkg"
+            method="POST"
+          >
             <input type="text" name="name" placeholder="Your Name" required />
             <input
               type="email"
@@ -124,6 +133,12 @@
               required
             ></textarea>
             <button type="submit">Send Message</button>
+            <p class="form-success" style="display: none">
+              Thank you! Your message has been sent.
+            </p>
+            <p class="form-error" style="display: none">
+              Oops! There was an error sending your message. Please try again.
+            </p>
           </form>
         </section>
       </div>

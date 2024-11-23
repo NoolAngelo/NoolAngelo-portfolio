@@ -6,6 +6,10 @@
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: hsl(0, 0%, 98%);
   color: hsl(0, 0%, 14%);
@@ -49,6 +53,11 @@ nav {
   color: hsl(0, 0%, 13%);
   font-size: 0.9rem;
   position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: hsl(0, 0%, 20%);
 }
 
 .nav-links a::after {

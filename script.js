@@ -14,43 +14,47 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // Intersection Observer for fade-in animations
-const observer = new IntersectionObserver(
-  (entries) => {
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll(".project-card").forEach((card) => {
+    card.style.opacity = 0;
+    card.style.transform = "translateY(20px)";
+    card.style.transition = "all 0.6s ease";
+    observer.observe(card);
+  });
+
+  const sections = document.querySelectorAll(".hero, .projects");
+
+  const revealSection = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = "translateY(0)";
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
       }
     });
-  },
-  { threshold: 0.1 }
-);
+  };
 
-document.querySelectorAll(".project-card").forEach((card) => {
-  card.style.opacity = 0;
-  card.style.transform = "translateY(20px)";
-  card.style.transition = "all 0.6s ease";
-  observer.observe(card);
-});
-
-const sections = document.querySelectorAll(".hero, .projects");
-
-const revealSection = (entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    }
+  const sectionObserver = new IntersectionObserver(revealSection, {
+    threshold: 0.1,
   });
-};
 
-const sectionObserver = new IntersectionObserver(revealSection, {
-  threshold: 0.1,
-});
-
-sections.forEach((section) => {
-  sectionObserver.observe(section);
-});
+  sections.forEach((section) => {
+    sectionObserver.observe(section);
+  });
+} else {
+  console.error("IntersectionObserver is not supported by this browser.");
+}
 
 // Function to handle the logo animation
 const handleLogoAnimation = () => {
@@ -103,5 +107,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   menuIcon.addEventListener("click", () => {
     navLinks.classList.toggle("active");
+  });
+
+  // Form submission handling
+  const form = document.querySelector(".contact-form");
+  const successMessage = document.querySelector(".form-success");
+  const errorMessage = document.querySelector(".form-error");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      if (response.ok) {
+        successMessage.style.display = "block";
+        form.reset();
+      } else {
+        throw new Error("Network response was not ok.");
+      }
+    } catch (error) {
+      errorMessage.style.display = "block";
+    }
   });
 });
