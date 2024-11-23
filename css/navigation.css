@@ -1,6 +1,27 @@
-/* Import global and navigation styles */
-@import url('css/global.css');
-@import url('css/navigation.css');
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(0, 0%, 14%);
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
 
 /* Hero Section */
 .hero {
@@ -277,21 +298,12 @@ footer nav ul li a:hover::after {
     font-size: 2.5rem;
   }
 
-  .nav-links {
-    display: none;
-  }
-
   .abstract-shape {
     height: 300px;
   }
 
   .project-grid {
     grid-template-columns: 1fr;
-  }
-
-  .menu-icon {
-    display: block;
-    cursor: pointer;
   }
 
   footer nav ul {

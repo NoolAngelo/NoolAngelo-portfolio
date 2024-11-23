@@ -105,34 +105,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuIcon = document.querySelector(".menu-icon");
   const navLinks = document.querySelector(".nav-links");
 
-  menuIcon.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
+  if (menuIcon && navLinks) {
+    menuIcon.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
 
   // Form submission handling
   const form = document.querySelector(".contact-form");
   const successMessage = document.querySelector(".form-success");
   const errorMessage = document.querySelector(".form-error");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-      if (response.ok) {
-        successMessage.style.display = "block";
-        form.reset();
-      } else {
-        throw new Error("Network response was not ok.");
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+        if (response.ok) {
+          if (successMessage) successMessage.style.display = "block";
+          form.reset();
+        } else {
+          throw new Error("Network response was not ok.");
+        }
+      } catch (error) {
+        if (errorMessage) errorMessage.style.display = "block";
       }
-    } catch (error) {
-      errorMessage.style.display = "block";
-    }
-  });
+    });
+  }
 });
