@@ -1,6 +1,90 @@
-/* Import global and navigation styles */
-@import url('css/global.css');
-@import url('css/navigation.css');
+/* CSS Variables */
+:root {
+  --background-color: hsl(0, 0%, 98%);
+  --text-color: hsl(0, 0%, 14%);
+  --primary-color: hsl(0, 0%, 13%);
+  --secondary-color: hsl(0, 0%, 40%);
+  --hover-color: hsl(0, 0%, 20%);
+  --border-color: hsl(0, 0%, 80%);
+  --box-shadow-color: hsla(0, 0%, 0%, 0.05);
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: hsla(0, 0%, 98%, 0.95);
+  padding: 1.5rem 2rem;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--hover-color);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
 
 /* Hero Section */
 .hero {
@@ -21,14 +105,14 @@
 
 .hero-text p {
   font-size: 1.1rem;
-  color: hsl(0, 0%, 40%);
+  color: var(--secondary-color);
   margin-bottom: 2rem;
 }
 
 .cta-button {
   display: inline-block;
   padding: 0.8rem 1.6rem;
-  background: hsl(0, 0%, 13%);
+  background: var(--primary-color);
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -56,7 +140,7 @@
 
 .shape {
   position: absolute;
-  background: hsl(0, 0%, 13%);
+  background: var(--primary-color);
   border-radius: 50%;
   animation: float 20s infinite ease-in-out;
 }
@@ -102,10 +186,10 @@
 }
 
 .project-card {
-  background: hsl(0, 0%, 100%);
+  background: var(--background-color);
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 15px hsla(0, 0%, 0%, 0.05);
+  box-shadow: 0 2px 15px var(--box-shadow-color);
   transition: transform 0.3s ease;
 }
 
@@ -118,7 +202,7 @@
 }
 
 .project-card p {
-  color: hsl(0, 0%, 40%);
+  color: var(--secondary-color);
   font-size: 0.9rem;
 }
 
@@ -144,14 +228,14 @@
 .contact-form input,
 .contact-form textarea {
   padding: 0.8rem;
-  border: 1px solid hsl(0, 0%, 80%);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   font-size: 1rem;
 }
 
 .contact-form button {
   padding: 0.8rem 1.6rem;
-  background: hsl(0, 0%, 13%);
+  background: var(--primary-color);
   color: white;
   border: none;
   border-radius: 4px;
@@ -161,12 +245,12 @@
 }
 
 .contact-form button:hover {
-  background: hsl(0, 0%, 20%);
+  background: var(--hover-color);
 }
 
 /* Footer */
 footer {
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--background-color);
   padding: 2rem 0;
   border-top: 1px solid hsl(0, 0%, 92%);
   margin-top: auto;
@@ -192,7 +276,7 @@ footer nav ul {
 }
 
 footer nav ul li a {
-  color: #333;
+  color: var(--primary-color);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.3s ease;
@@ -207,7 +291,7 @@ footer nav ul li a::after {
   height: 1px;
   bottom: 0;
   left: 50%;
-  background-color: hsl(0, 0%, 20%);
+  background-color: var(--hover-color);
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -224,18 +308,18 @@ footer nav ul li a:hover::after {
 }
 
 .social-links a {
-  color: hsl(0, 0%, 40%);
+  color: var(--secondary-color);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-  color: hsl(0, 0%, 20%);
+  color: var(--hover-color);
 }
 
 .copyright {
-  color: hsl(0, 0%, 40%);
+  color: var(--secondary-color);
   font-size: 0.8rem;
   margin-top: 1.5rem;
 }
@@ -275,10 +359,6 @@ footer nav ul li a:hover::after {
 
   .hero-text h1 {
     font-size: 2.5rem;
-  }
-
-  .nav-links {
-    display: none;
   }
 
   .abstract-shape {

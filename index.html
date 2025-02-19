@@ -51,17 +51,39 @@
     <header>
       <nav role="navigation">
         <div class="nav-content">
-          <a href="index.html" class="animated-logo" id="logo" aria-label="Home">
+          <a
+            href="index.html"
+            class="animated-logo"
+            id="logo"
+            aria-label="Home"
+          >
             <svg width="100" height="50" xmlns="http://www.w3.org/2000/svg">
-              <text x="0" y="15" class="prefix" font-family="Arial" font-size="15">Nool/</text>
-              <text x="35" y="15" class="full-text" font-family="Arial" font-size="15">Angelo</text>
+              <text
+                x="0"
+                y="15"
+                class="prefix"
+                font-family="Arial"
+                font-size="15"
+              >
+                Nool/
+              </text>
+              <text
+                x="35"
+                y="15"
+                class="full-text"
+                font-family="Arial"
+                font-size="15"
+              >
+                Angelo
+              </text>
             </svg>
           </a>
-          <div class="menu-icon" aria-label="Menu" tabindex="0" role="button">&#9776;</div>
+          <div class="menu-icon" aria-label="Menu" tabindex="0" role="button">
+            &#9776;
+          </div>
           <div class="nav-links" role="menu">
             <a href="index.html#work" aria-label="Work" role="menuitem">Work</a>
             <a href="about.html" aria-label="About" role="menuitem">About</a>
-            <a href="#contact" aria-label="Contact" role="menuitem">Contact</a>
           </div>
         </div>
       </nav>
@@ -76,7 +98,7 @@
               A Student Programmer / Developer focused on crafting clean and
               user-friendly experiences.
             </p>
-            <a href="#contact" class="cta-button">Let's work together</a>
+            <a href="#work" class="cta-button">Let's work together</a>
           </div>
           <div class="hero-image">
             <div class="abstract-shape">
@@ -114,41 +136,9 @@
             </div>
           </div>
         </section>
-
-        <section class="contact" id="contact">
-          <h2>Contact Me</h2>
-          <form
-            class="contact-form"
-            action="https://formspree.io/f/xeoqljkg"
-            method="POST"
-          >
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="Your Message"
-              required
-            ></textarea>
-            <div class="g-recaptcha" data-sitekey="your-site-key"></div>
-            <button type="submit">Send Message</button>
-            <p class="form-success" style="display: none">
-              Thank you! Your message has been sent.
-            </p>
-            <p class="form-error" style="display: none">
-              Oops! There was an error sending your message. Please try again.
-            </p>
-          </form>
-        </section>
       </div>
     </main>
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="script.js"></script>
     <footer>
       <div class="footer-content">

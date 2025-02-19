@@ -1,5 +1,5 @@
 <header>
-  <nav>
+  <nav role="navigation">
     <div class="nav-content">
       <a
         href="https://noolangelo.github.io/NoolAngelo-portfolio/"
@@ -22,11 +22,15 @@
           </text>
         </svg>
       </a>
-      <div class="menu-icon" aria-label="Menu">&#9776;</div>
-      <div class="nav-links">
-        <a href="index.html#work" aria-label="Work">Work</a>
-        <a href="about.html" aria-label="About">About</a>
-        <a href="index.html#contact" aria-label="Contact">Contact</a>
+      <div class="menu-icon" aria-label="Menu" tabindex="0" role="button">
+        &#9776;
+      </div>
+      <div class="nav-links" role="menu">
+        <a href="index.html#work" aria-label="Work" role="menuitem">Work</a>
+        <a href="about.html" aria-label="About" role="menuitem">About</a>
+        <a href="index.html#contact" aria-label="Contact" role="menuitem"
+          >Contact</a
+        >
       </div>
     </div>
   </nav>

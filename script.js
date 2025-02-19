@@ -110,33 +110,4 @@ document.addEventListener("DOMContentLoaded", () => {
       navLinks.classList.toggle("active");
     });
   }
-
-  // Form submission handling
-  const form = document.querySelector(".contact-form");
-  const successMessage = document.querySelector(".form-success");
-  const errorMessage = document.querySelector(".form-error");
-
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: formData,
-          headers: {
-            Accept: "application/json",
-          },
-        });
-        if (response.ok) {
-          if (successMessage) successMessage.style.display = "block";
-          form.reset();
-        } else {
-          throw new Error("Network response was not ok.");
-        }
-      } catch (error) {
-        if (errorMessage) errorMessage.style.display = "block";
-      }
-    });
-  }
 });
