@@ -3,62 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Creative Portfolio</title>
+    <title>About Me - Mark Angelo Nool</title>
     <link rel="stylesheet" href="styles.css" />
+    <meta
+      name="description"
+      content="Learn more about Mark Angelo Nool, a student programmer and developer focused on creating innovative solutions."
+    />
   </head>
   <body>
-    <?php include 'header.html'; ?>
+    <div id="header-placeholder"></div>
 
     <div class="container">
-      <section class="projects" id="work">
+      <section class="about" id="about">
         <h2 class="section-title">About Me</h2>
-        <div class="project-grid">
-          <div class="project-card">
-            <h3>Python Programming</h3>
+        <div class="about-content">
+          <div class="about-text">
             <p>
-              Developed efficient and scalable Python applications, focusing on
-              automation, data analysis, and web development.
+              I'm Mark Angelo Nool, a passionate student programmer with
+              expertise in Python and web development. I focus on creating
+              clean, efficient, and user-friendly solutions that solve
+              real-world problems.
+            </p>
+            <p>
+              My approach to development combines technical expertise with
+              creative problem-solving. I believe in writing code that is not
+              only functional but also maintainable and scalable.
             </p>
           </div>
-          <div class="project-card">
-            <h3>Portfolio Website</h3>
-            <p>
-              Clean and minimal portfolio website for a professional Programmer.
-            </p>
-          </div>
-          <div class="project-card">
-            <h3>Web Developer</h3>
-            <p>
-              Specializing in creating responsive, user-friendly websites with
-              clean design and functionality. Proficient in front-end and
-              back-end development.
-            </p>
+          <div class="skills">
+            <h3>My Skills</h3>
+            <div class="skill-grid">
+              <div class="skill-card">
+                <h4>Python Programming</h4>
+                <p>
+                  Developed efficient and scalable Python applications, focusing
+                  on automation, data analysis, and web development.
+                </p>
+              </div>
+              <div class="skill-card">
+                <h4>Web Development</h4>
+                <p>
+                  Specializing in creating responsive, user-friendly websites
+                  with clean design and functionality. Proficient in front-end
+                  and back-end development.
+                </p>
+              </div>
+              <div class="skill-card">
+                <h4>UI/UX Design</h4>
+                <p>
+                  Creating intuitive and engaging user interfaces with a focus
+                  on user experience and accessibility.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </div>
 
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // Load header and footer using JavaScript instead of PHP
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+          // Initialize theme toggle after header is loaded
+          if (typeof handleDarkModeToggle === "function") {
+            handleDarkModeToggle();
+          }
+        });
+
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
     <script src="script.js"></script>
-    <footer>
-      <div class="footer-content">
-        <div class="social-links">
-          <a
-            href="https://www.linkedin.com/in/mark-angelo-nool-876b24313/"
-            aria-label="LinkedIn profile"
-            >LinkedIn</a
-          >
-          <a href="https://github.com/NoolAngelo" aria-label="GitHub profile"
-            >GitHub</a
-          >
-          <a href="https://twitter.com/yourprofile" aria-label="Twitter profile"
-            >Twitter</a
-          >
-        </div>
-        <p class="copyright">
-          &copy; 2024 Mark Angelo Nool. All rights reserved.
-        </p>
-      </div>
-    </footer>
-    <?php include 'footer.html'; ?>
   </body>
 </html>

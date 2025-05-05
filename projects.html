@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Mark Angelo Nool</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta
+      name="description"
+      content="Explore projects by Mark Angelo Nool, a student programmer with expertise in Python and web development."
+    />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <div class="container">
+      <section class="projects-page" id="projects">
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="project-showcase">
+          <article class="project-case">
+            <div class="project-header">
+              <h3>Python Data Analysis Tool</h3>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>Data Analysis</span>
+                <span>Visualization</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <p class="project-description">
+                A comprehensive data analysis tool built with Python that
+                automates the processing of large datasets and generates
+                insightful visualizations for business intelligence.
+              </p>
+              <div class="project-details">
+                <h4>Challenge</h4>
+                <p>
+                  Processing large datasets manually was time-consuming and
+                  error-prone, requiring a solution that could automate this
+                  process while providing clear insights.
+                </p>
+
+                <h4>Solution</h4>
+                <p>
+                  Developed a Python application using pandas and matplotlib
+                  that automates data cleaning, processing, and visualization,
+                  reducing analysis time by 70%.
+                </p>
+
+                <h4>Results</h4>
+                <p>
+                  The tool successfully processed over 1 million data points,
+                  identified key trends, and generated reports that informed
+                  critical business decisions.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-case">
+            <div class="project-header">
+              <h3>Responsive Portfolio Website</h3>
+              <div class="project-tags">
+                <span>HTML/CSS</span>
+                <span>JavaScript</span>
+                <span>Responsive Design</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <p class="project-description">
+                A clean, minimalist portfolio website designed to showcase
+                professional work while providing an optimal viewing experience
+                across all devices.
+              </p>
+              <div class="project-details">
+                <h4>Challenge</h4>
+                <p>
+                  Creating a professional online presence that effectively
+                  communicates skills and projects while maintaining a
+                  minimalist aesthetic and excellent performance.
+                </p>
+
+                <h4>Solution</h4>
+                <p>
+                  Developed a responsive website with a focus on typography,
+                  white space, and subtle animations using modern HTML, CSS, and
+                  JavaScript practices.
+                </p>
+
+                <h4>Results</h4>
+                <p>
+                  Achieved a 95+ score on Google PageSpeed Insights with fully
+                  responsive design that maintains its minimalist aesthetic
+                  across all screen sizes.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // Load header and footer using JavaScript
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+          // Initialize theme toggle after header is loaded
+          if (typeof handleDarkModeToggle === "function") {
+            handleDarkModeToggle();
+          }
+        });
+
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

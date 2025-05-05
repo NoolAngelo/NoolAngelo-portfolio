@@ -97,9 +97,67 @@ const handleLogoAnimation = () => {
   });
 };
 
+// Dark mode functionality
+const handleDarkModeToggle = () => {
+  const themeToggle = document.getElementById("theme-toggle");
+
+  // Check for saved theme preference or use device preference
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  // Set initial theme
+  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
+
+  // Toggle theme when button is clicked
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+    });
+  }
+};
+
+// Add scroll progress indicator to the DOM
+const addScrollProgressIndicator = () => {
+  const progressBar = document.createElement("div");
+  progressBar.className = "scroll-progress";
+  document.body.appendChild(progressBar);
+
+  // Update progress bar width based on scroll position
+  window.addEventListener("scroll", () => {
+    const scrollableHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrolledPercentage = (window.scrollY / scrollableHeight) * 100;
+    progressBar.style.width = `${scrolledPercentage}%`;
+  });
+};
+
+// Enhanced hover animations for navigation links
+const enhanceNavLinks = () => {
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      link.style.transform = "translateY(-2px)";
+    });
+
+    link.addEventListener("mouseleave", () => {
+      link.style.transform = "translateY(0)";
+    });
+  });
+};
+
 // Initialize the animation when the page loads
 document.addEventListener("DOMContentLoaded", () => {
   handleLogoAnimation();
+  handleDarkModeToggle();
+  addScrollProgressIndicator();
+  enhanceNavLinks();
 
   // Mobile navigation menu toggle
   const menuIcon = document.querySelector(".menu-icon");
@@ -111,6 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 // Lazy Loading Implementation
 document.addEventListener("DOMContentLoaded", () => {
   const lazyImages = document.querySelectorAll("img.lazy");

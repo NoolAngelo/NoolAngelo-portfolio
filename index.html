@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NoolAngelo</title>
+    <title>NoolAngelo - Student Programmer Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
     <meta
       name="description"
@@ -48,46 +48,7 @@
   </head>
 
   <body>
-    <header>
-      <nav role="navigation">
-        <div class="nav-content">
-          <a
-            href="index.html"
-            class="animated-logo"
-            id="logo"
-            aria-label="Home"
-          >
-            <svg width="100" height="50" xmlns="http://www.w3.org/2000/svg">
-              <text
-                x="0"
-                y="15"
-                class="prefix"
-                font-family="Arial"
-                font-size="15"
-              >
-                Nool/
-              </text>
-              <text
-                x="35"
-                y="15"
-                class="full-text"
-                font-family="Arial"
-                font-size="15"
-              >
-                Angelo
-              </text>
-            </svg>
-          </a>
-          <div class="menu-icon" aria-label="Menu" tabindex="0" role="button">
-            &#9776;
-          </div>
-          <div class="nav-links" role="menu">
-            <a href="index.html#work" aria-label="Work" role="menuitem">Work</a>
-            <a href="about.html" aria-label="About" role="menuitem">About</a>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main>
       <div class="container">
@@ -136,27 +97,39 @@
             </div>
           </div>
         </section>
+
+        <section class="contact" id="contact">
+          <h2 class="section-title">Get in Touch</h2>
+          <form class="contact-form" id="contact-form">
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <textarea rows="5" placeholder="Your message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </section>
       </div>
     </main>
 
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // Load header and footer using JavaScript
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+          // Initialize theme toggle after header is loaded
+          if (typeof handleDarkModeToggle === "function") {
+            handleDarkModeToggle();
+          }
+        });
+
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
     <script src="script.js"></script>
-    <footer>
-      <div class="footer-content">
-        <div class="social-links">
-          <a
-            href="https://www.linkedin.com/in/mark-angelo-nool-876b24313/"
-            aria-label="LinkedIn profile"
-            >LinkedIn</a
-          >
-          <a href="https://github.com/NoolAngelo" aria-label="GitHub profile"
-            >GitHub</a
-          >
-          <a href="#" aria-label="Twitter profile">Twitter</a>
-        </div>
-        <p class="copyright">
-          &copy; 2024 Mark Angelo Nool. All rights reserved.
-        </p>
-      </div>
-    </footer>
   </body>
 </html>
