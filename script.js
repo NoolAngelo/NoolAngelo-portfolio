@@ -152,12 +152,42 @@ const enhanceNavLinks = () => {
   });
 };
 
+// Animate skill progress bars on scroll
+const animateSkillBars = () => {
+  const skillCards = document.querySelectorAll(".skill-card");
+
+  const skillObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          const progressBar = card.querySelector(".skill-progress");
+          const percent = progressBar.style.width;
+
+          // Set the custom property for the animation target
+          progressBar.style.setProperty("--progress-width", percent);
+          card.classList.add("animated");
+
+          // Animation already complete, no need to observe anymore
+          skillObserver.unobserve(card);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  skillCards.forEach((card) => {
+    skillObserver.observe(card);
+  });
+};
+
 // Initialize the animation when the page loads
 document.addEventListener("DOMContentLoaded", () => {
   handleLogoAnimation();
   handleDarkModeToggle();
   addScrollProgressIndicator();
   enhanceNavLinks();
+  animateSkillBars();
 
   // Mobile navigation menu toggle
   const menuIcon = document.querySelector(".menu-icon");
