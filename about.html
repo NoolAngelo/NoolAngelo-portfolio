@@ -3,110 +3,218 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me - Mark Angelo Nool</title>
+    <title>About | Mark Angelo Nool</title>
     <link rel="stylesheet" href="styles.css" />
     <meta
       name="description"
-      content="Learn more about Mark Angelo Nool, a student programmer and developer focused on creating innovative solutions."
+      content="Learn more about Mark Angelo Nool - Developer and Programmer specializing in web development and Python."
     />
+    <!-- Preload critical assets -->
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel="preload" href="script.js" as="script" />
   </head>
   <body>
     <div id="header-placeholder"></div>
 
-    <div class="container">
-      <section class="about" id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              I'm Mark Angelo Nool, a passionate student programmer with
-              expertise in Python and web development. I focus on creating
-              clean, efficient, and user-friendly solutions that solve
-              real-world problems.
-            </p>
-            <p>
-              My approach to development combines technical expertise with
-              creative problem-solving. I believe in writing code that is not
-              only functional but also maintainable and scalable.
-            </p>
-            <a
-              href="assets/Mark_Angelo_Nool_Resume.pdf"
-              class="resume-button"
-              download
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              Download Resume
-            </a>
-          </div>
-          <div class="skills">
-            <h3>My Skills</h3>
-            <div class="skill-grid">
-              <div class="skill-card">
-                <h4>Python Programming</h4>
-                <div class="skill-level">
-                  <div class="skill-progress" style="width: 90%">
-                    <span class="skill-percent">90%</span>
-                  </div>
+    <main>
+      <div class="container">
+        <section class="about-page">
+          <span class="pre-heading">About Me</span>
+          <h1 class="section-title">Mark Angelo Nool</h1>
+
+          <div class="about-grid">
+            <div class="about-bio">
+              <div class="profile-container">
+                <div class="profile-image">
+                  <!-- Replace with your actual image path when available -->
+                  <div class="profile-placeholder">MN</div>
                 </div>
-                <p>
-                  Developed efficient and scalable Python applications, focusing
-                  on automation, data analysis, and web development.
+                <p class="lead-text">
+                  I'm a BS Computer Science student at Far Eastern University
+                  Alabang, specializing in Software Engineering. My passion lies
+                  in creating clean, efficient, and user-friendly solutions
+                  through code.
                 </p>
               </div>
-              <div class="skill-card">
-                <h4>Web Development</h4>
-                <div class="skill-level">
-                  <div class="skill-progress" style="width: 85%">
-                    <span class="skill-percent">85%</span>
-                  </div>
-                </div>
-                <p>
-                  Specializing in creating responsive, user-friendly websites
-                  with clean design and functionality. Proficient in front-end
-                  and back-end development.
-                </p>
+
+              <p>
+                With a strong foundation in both front-end and back-end
+                technologies, I take pride in building applications that not
+                only function flawlessly but also provide intuitive user
+                experiences. I believe in minimalism not just as an aesthetic
+                choice, but as a guiding principle for writing more efficient
+                and maintainable code.
+              </p>
+
+              <p>
+                When I'm not coding, you can find me exploring new technologies,
+                contributing to open-source projects, or deepening my
+                understanding of software architecture and best practices.
+              </p>
+
+              <div class="expertise-areas">
+                <h3>Areas of Expertise</h3>
+                <ul class="expertise-list">
+                  <li>
+                    <span class="expertise-icon">💻</span>
+                    <div>
+                      <h4>Web Development</h4>
+                      <p>
+                        Creating responsive, accessible, and performant websites
+                        with modern technologies including HTML5, CSS3,
+                        JavaScript, and responsive frameworks.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="expertise-icon">🐍</span>
+                    <div>
+                      <h4>Python Programming</h4>
+                      <p>
+                        Building efficient applications, automation tools, and
+                        data analysis solutions using Python and its ecosystems
+                        like Django, Flask, and Pandas.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="expertise-icon">📊</span>
+                    <div>
+                      <h4>Data Analysis</h4>
+                      <p>
+                        Transforming complex datasets into actionable insights
+                        using Python, Pandas, Matplotlib, and interactive
+                        visualization libraries.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <div class="skill-card">
-                <h4>UI/UX Design</h4>
-                <div class="skill-level">
-                  <div class="skill-progress" style="width: 75%">
-                    <span class="skill-percent">75%</span>
+            </div>
+
+            <div class="about-details">
+              <div class="education-section">
+                <h3>Education</h3>
+                <div class="timeline-item">
+                  <span class="timeline-date">2022 - Present</span>
+                  <div class="timeline-content">
+                    <h4>BS in Computer Science</h4>
+                    <p>Far Eastern University Alabang</p>
+                    <p>Specialization in Software Engineering</p>
+                    <ul class="education-highlights">
+                      <li>GPA: 3.8/4.0</li>
+                      <li>
+                        Relevant Coursework: Data Structures, Algorithms,
+                        Database Systems, Web Development
+                      </li>
+                      <li>Member, Computer Science Society</li>
+                    </ul>
                   </div>
                 </div>
-                <p>
-                  Creating intuitive and engaging user interfaces with a focus
-                  on user experience and accessibility.
-                </p>
+              </div>
+
+              <div class="skills-section">
+                <h3>Technical Skills</h3>
+                <div class="skill-grid">
+                  <div class="skill-card">
+                    <h4>Python</h4>
+                    <div class="skill-level">
+                      <div class="skill-progress" style="width: 90%"></div>
+                      <span class="skill-percent">90%</span>
+                    </div>
+                  </div>
+                  <div class="skill-card">
+                    <h4>HTML/CSS</h4>
+                    <div class="skill-level">
+                      <div class="skill-progress" style="width: 85%"></div>
+                      <span class="skill-percent">85%</span>
+                    </div>
+                  </div>
+                  <div class="skill-card">
+                    <h4>JavaScript</h4>
+                    <div class="skill-level">
+                      <div class="skill-progress" style="width: 80%"></div>
+                      <span class="skill-percent">80%</span>
+                    </div>
+                  </div>
+                  <div class="skill-card">
+                    <h4>Data Analysis</h4>
+                    <div class="skill-level">
+                      <div class="skill-progress" style="width: 75%"></div>
+                      <span class="skill-percent">75%</span>
+                    </div>
+                  </div>
+                  <div class="skill-card">
+                    <h4>UI/UX Design</h4>
+                    <div class="skill-level">
+                      <div class="skill-progress" style="width: 70%"></div>
+                      <span class="skill-percent">70%</span>
+                    </div>
+                  </div>
+                  <div class="skill-card">
+                    <h4>Git & GitHub</h4>
+                    <div class="skill-level">
+                      <div class="skill-progress" style="width: 85%"></div>
+                      <span class="skill-percent">85%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="resume-section">
+                <h3>Resume</h3>
+                <a href="#" class="resume-button">
+                  Download Resume
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+
+              <div class="certifications-section">
+                <h3>Certifications</h3>
+                <ul class="certification-list">
+                  <li class="certification-item">
+                    <div class="certification-details">
+                      <h4>Python Data Science</h4>
+                      <p>DataCamp, 2024</p>
+                    </div>
+                  </li>
+                  <li class="certification-item">
+                    <div class="certification-details">
+                      <h4>Front-End Web Development</h4>
+                      <p>Codecademy, 2023</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </main>
 
     <div id="footer-placeholder"></div>
 
     <script>
-      // Load header and footer using JavaScript instead of PHP
+      // Load header and footer
       fetch("header.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("header-placeholder").innerHTML = data;
-          // Initialize theme toggle after header is loaded
+          // Initialize theme toggle
           if (typeof handleDarkModeToggle === "function") {
             handleDarkModeToggle();
           }

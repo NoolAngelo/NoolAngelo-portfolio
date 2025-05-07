@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NoolAngelo - Student Programmer Portfolio</title>
+    <title>Mark Angelo Nool - Student Programmer Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
     <meta
       name="description"
@@ -13,6 +13,14 @@
       name="keywords"
       content="Python, Web Development, Full Stack, Software Engineering, Mark Angelo Nool"
     />
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel="preload" href="script.js" as="script" />
+    
+    <!-- Open Graph Tags -->
     <meta property="og:title" content="Mark Angelo Nool Portfolio" />
     <meta
       property="og:description"
@@ -22,11 +30,16 @@
     <meta property="og:url" content="https://yourwebsite.com" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://yourwebsite.com" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Mark Angelo Nool Portfolio" />
     <meta name="twitter:site" content="@yourtwitterhandle" />
     <meta name="twitter:creator" content="@yourtwitterhandle" />
+    
+    <!-- Font optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -41,25 +54,33 @@
         "jobTitle": "Programmer / Developer",
         "worksFor": {
           "@type": "Organization",
-          "name": "Your Organization"
+          "name": "Far Eastern University Alabang"
         }
       }
     </script>
   </head>
 
   <body>
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress"></div>
+    
     <div id="header-placeholder"></div>
 
     <main>
       <div class="container">
         <section class="hero">
           <div class="hero-text">
+            <span class="pre-heading">Developer / Programmer</span>
             <h1>Hi! I'm Mark Angelo Nool</h1>
             <p>
-              A Student Programmer / Developer focused on crafting clean and
-              user-friendly experiences.
+              BS Computer Science with Specialization in Software Engineering at
+              Far Eastern University Alabang. Focused on creating clean,
+              efficient, and user-friendly solutions.
             </p>
-            <a href="#work" class="cta-button">Let's work together</a>
+            <div class="hero-cta">
+              <a href="#work" class="cta-button primary">View My Work</a>
+              <a href="#contact" class="cta-button secondary">Contact Me</a>
+            </div>
           </div>
           <div class="hero-image">
             <div class="abstract-shape">
@@ -79,33 +100,97 @@
                 Developed efficient and scalable Python applications, focusing
                 on automation, data analysis, and web development.
               </p>
+              <div class="project-role-highlight">
+                <h4>Key Skills</h4>
+                <p>Data analysis, API integration, automation scripts, web scraping</p>
+              </div>
             </div>
             <div class="project-card">
               <h3>Portfolio Website</h3>
               <p>
                 Clean and minimal portfolio website for a professional
-                Programmer.
+                Programmer, featuring responsive design and optimal user experience.
               </p>
+              <div class="project-role-highlight">
+                <h4>Technologies</h4>
+                <p>HTML5, CSS3, JavaScript, Responsive Design</p>
+              </div>
             </div>
             <div class="project-card">
-              <h3>Web Developer</h3>
+              <h3>Web Development</h3>
               <p>
                 Specializing in creating responsive, user-friendly websites with
                 clean design and functionality. Proficient in front-end and
                 back-end development.
               </p>
+              <div class="project-role-highlight">
+                <h4>Focus Areas</h4>
+                <p>UX/UI design, performance optimization, cross-browser compatibility</p>
+              </div>
+            </div>
+          </div>
+          <div class="view-all-projects">
+            <a href="projects.html" class="view-more-link">
+              View All Projects
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <section class="skills-showcase">
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="skills-container">
+            <div class="skill-category">
+              <h3>Languages</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">SQL</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Frameworks & Tools</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">Flask</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Bootstrap</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Other Skills</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">UI/UX Design</span>
+                <span class="skill-tag">Responsive Design</span>
+                <span class="skill-tag">Data Analysis</span>
+                <span class="skill-tag">Problem Solving</span>
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="contact" id="contact">
-          <h2 class="section-title">Get in Touch</h2>
-          <form class="contact-form" id="contact-form">
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="Email" required />
-            <textarea rows="5" placeholder="Your message" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
+        <section class="hire-me" id="contact">
+          <h2 class="section-title">Hire Me</h2>
+          <div class="hire-me-content">
+            <p>
+              I'm currently available for freelance projects, internships, and
+              full-time positions in web development and Python programming.
+            </p>
+            <div class="availability">
+              <span class="availability-status available"
+                >Available for Work</span
+              >
+              <a href="mailto:markangelonool0@gmail.com" class="cta-button"
+                >Email Me</a
+              >
+            </div>
+          </div>
         </section>
 
         <section class="testimonials">
@@ -174,6 +259,47 @@
             </div>
           </div>
         </section>
+
+        <section class="process">
+          <h2 class="section-title">My Process</h2>
+          <div class="process-steps">
+            <div class="process-step">
+              <span class="step-number">01</span>
+              <h3>Discover</h3>
+              <p>
+                Understanding requirements and researching optimal solutions
+              </p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">02</span>
+              <h3>Plan</h3>
+              <p>
+                Creating detailed specifications and planning the implementation
+              </p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">03</span>
+              <h3>Develop</h3>
+              <p>Writing clean, efficient code with thorough documentation</p>
+            </div>
+            <div class="process-step">
+              <span class="step-number">04</span>
+              <h3>Test & Refine</h3>
+              <p>Rigorous testing and optimization for performance</p>
+            </div>
+          </div>
+        </section>
+        
+        <section class="cta-section">
+          <div class="cta-container">
+            <h2>Interested in working together?</h2>
+            <p>Let's discuss how I can contribute to your next project.</p>
+            <div class="cta-buttons">
+              <a href="about.html" class="cta-button">Learn More About Me</a>
+              <a href="mailto:markangelonool0@gmail.com" class="cta-button secondary">Get In Touch</a>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 
@@ -198,5 +324,43 @@
         });
     </script>
     <script src="script.js"></script>
+
+    <!-- Performance optimization script -->
+    <script>
+      // Lazy load all images
+      document.addEventListener("DOMContentLoaded", function () {
+        const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+        if ("IntersectionObserver" in window) {
+          let lazyImageObserver = new IntersectionObserver(function (
+            entries,
+            observer
+          ) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                let lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.classList.remove("lazy");
+                lazyImageObserver.unobserve(lazyImage);
+              }
+            });
+          });
+
+          lazyImages.forEach(function (lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+          });
+        }
+      });
+
+      // Measure and optimize page load time
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          const pageLoadTime =
+            window.performance.timing.domContentLoadedEventEnd -
+            window.performance.timing.navigationStart;
+          console.log("Page load time:", pageLoadTime + "ms");
+        }, 0);
+      });
+    </script>
   </body>
 </html>

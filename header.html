@@ -1,42 +1,63 @@
+<!-- Enhanced Accessible Header -->
 <header>
-  <nav role="navigation">
+  <nav role="navigation" aria-label="Main navigation">
     <div class="nav-content">
       <a
-        href="https://noolangelo.github.io/NoolAngelo-portfolio/"
+        href="index.html"
         class="animated-logo"
         id="logo"
-        aria-label="Home"
+        aria-label="Home - Mark Angelo Nool"
       >
-        <svg width="100" height="50" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="15" class="prefix" font-family="Arial" font-size="15">
+        <svg
+          width="100"
+          height="50"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <text
+            x="0"
+            y="15"
+            class="prefix"
+            font-family="var(--heading-font)"
+            font-size="15"
+          >
             Nool/
           </text>
           <text
             x="35"
             y="15"
             class="full-text"
-            font-family="Arial"
+            font-family="var(--heading-font)"
             font-size="15"
           >
             Angelo
           </text>
         </svg>
       </a>
-      <div class="menu-icon" aria-label="Menu" tabindex="0" role="button">
-        &#9776;
-      </div>
-      <div class="nav-links" role="menu">
-        <a href="index.html#work" aria-label="Work" role="menuitem">Work</a>
-        <a href="projects.html" aria-label="Projects" role="menuitem"
-          >Projects</a
+      <button
+        class="menu-icon"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+        aria-haspopup="true"
+      >
+        <span class="sr-only">Menu</span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="nav-links" role="menu">
+        <a href="index.html#work" role="menuitem" aria-current="page">Work</a>
+        <a href="projects.html" role="menuitem">Projects</a>
+        <a href="about.html" role="menuitem">About</a>
+        <a href="index.html#contact" role="menuitem">Contact</a>
+        <button
+          id="theme-toggle"
+          aria-label="Toggle dark mode"
+          aria-pressed="false"
         >
-        <a href="about.html" aria-label="About" role="menuitem">About</a>
-        <a href="index.html#contact" aria-label="Contact" role="menuitem"
-          >Contact</a
-        >
-        <button id="theme-toggle" aria-label="Toggle dark mode">
-          <span class="light-icon">☀️</span>
-          <span class="dark-icon">🌙</span>
+          <span class="light-icon" aria-hidden="true">☀️</span>
+          <span class="dark-icon" aria-hidden="true">🌙</span>
+          <span class="sr-only">Toggle dark mode</span>
         </button>
       </div>
     </div>
